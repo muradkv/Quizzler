@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var progressBar: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
