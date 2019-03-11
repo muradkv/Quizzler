@@ -15,9 +15,41 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quizzler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czp-R7-oYm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="345"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="345" id="o22-l4-BS9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZN-U7-hnd" userLabel="Lawyer Container">
+                                <rect key="frame" x="0.0" y="345" width="414" height="344"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha6-3J-XQT">
+                                <rect key="frame" x="0.0" y="689" width="414" height="47"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="lej-FS-DcO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ha6-3J-XQT" firstAttribute="top" secondItem="KZN-U7-hnd" secondAttribute="bottom" id="MAe-QM-H2g"/>
+                            <constraint firstAttribute="bottom" secondItem="ha6-3J-XQT" secondAttribute="bottom" id="VT7-AG-Ft1"/>
+                            <constraint firstItem="KZN-U7-hnd" firstAttribute="top" secondItem="Czp-R7-oYm" secondAttribute="bottom" id="W0r-8M-SRG"/>
+                            <constraint firstItem="Czp-R7-oYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Xnz-sj-cZK"/>
+                            <constraint firstAttribute="trailing" secondItem="KZN-U7-hnd" secondAttribute="trailing" id="j9W-eZ-vzW"/>
+                            <constraint firstItem="Czp-R7-oYm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="n4d-3q-ERI"/>
+                            <constraint firstAttribute="trailing" secondItem="ha6-3J-XQT" secondAttribute="trailing" id="pVU-wy-yTo"/>
+                            <constraint firstItem="KZN-U7-hnd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uN2-aV-Z5g"/>
+                            <constraint firstItem="ha6-3J-XQT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xH2-WY-2i1"/>
+                            <constraint firstAttribute="trailing" secondItem="Czp-R7-oYm" secondAttribute="trailing" id="xWi-65-bbz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
