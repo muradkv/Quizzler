@@ -78,9 +78,36 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha6-3J-XQT">
                                 <rect key="frame" x="0.0" y="620" width="375" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x/13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpL-de-QOv" userLabel="Progress Label">
+                                        <rect key="frame" x="8" y="0.0" width="52" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="N77-25-Awp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="jtc-vq-8HZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 9999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boA-je-mSc" userLabel="Score Label">
+                                        <rect key="frame" x="251" y="0.0" width="116" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116" id="U8w-IJ-AyY"/>
+                                            <constraint firstAttribute="height" constant="21" id="h43-s0-K4C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="boA-je-mSc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YpL-de-QOv" secondAttribute="trailing" constant="20" id="EPO-44-eOp"/>
+                                    <constraint firstAttribute="trailing" secondItem="boA-je-mSc" secondAttribute="trailing" constant="8" id="HhC-tp-yyK"/>
+                                    <constraint firstItem="boA-je-mSc" firstAttribute="top" secondItem="ha6-3J-XQT" secondAttribute="top" id="SBO-oF-kdA"/>
+                                    <constraint firstItem="YpL-de-QOv" firstAttribute="leading" secondItem="ha6-3J-XQT" secondAttribute="leading" constant="8" id="eDt-ih-TpE"/>
                                     <constraint firstAttribute="height" constant="47" id="lej-FS-DcO"/>
+                                    <constraint firstItem="YpL-de-QOv" firstAttribute="top" secondItem="ha6-3J-XQT" secondAttribute="top" id="yXl-4n-Tok"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,7 +127,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="progressLabel" destination="YpL-de-QOv" id="Q7E-b1-Wbr"/>
                         <outlet property="questionLabel" destination="FNJ-Vm-90L" id="c0A-Jk-fJg"/>
+                        <outlet property="scoreLabel" destination="boA-je-mSc" id="21S-4N-Pfr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
