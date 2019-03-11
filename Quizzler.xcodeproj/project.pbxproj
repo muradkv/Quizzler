@@ -58,6 +58,7 @@
 				FA417D392236E1F300D46D78 /* View */,
 				FA417D372236E1E500D46D78 /* Controller */,
 				FA417D3A2236E20700D46D78 /* Supporting Files */,
+				FA417D312236DA1200D46D78 /* Info.plist */,
 			);
 			path = Quizzler;
 			sourceTree = "<group>";
@@ -91,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				FA417D2E2236DA1200D46D78 /* LaunchScreen.storyboard */,
-				FA417D312236DA1200D46D78 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

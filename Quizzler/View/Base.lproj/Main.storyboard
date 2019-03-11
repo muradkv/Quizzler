@@ -39,7 +39,42 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZN-U7-hnd" userLabel="Lawyer Container">
                                 <rect key="frame" x="0.0" y="345" width="375" height="275"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbC-gF-AMK">
+                                        <rect key="frame" x="25" y="109.5" width="155.5" height="56"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="KDM-XT-HhO"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="xRb-UA-T1G"/>
+                                        </constraints>
+                                        <state key="normal" title="True">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dqF-tj-ibS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAC-e8-5V9">
+                                        <rect key="frame" x="194.5" y="109.5" width="155.5" height="56"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="False">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e9A-ei-1In"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qAC-e8-5V9" secondAttribute="trailing" constant="25" id="2oq-zm-R1x"/>
+                                    <constraint firstItem="qAC-e8-5V9" firstAttribute="leading" secondItem="RbC-gF-AMK" secondAttribute="trailing" constant="14" id="Avr-Us-arv"/>
+                                    <constraint firstItem="qAC-e8-5V9" firstAttribute="height" secondItem="RbC-gF-AMK" secondAttribute="height" id="Jgz-ei-L80"/>
+                                    <constraint firstItem="RbC-gF-AMK" firstAttribute="leading" secondItem="KZN-U7-hnd" secondAttribute="leading" constant="25" id="LzM-m5-L2q"/>
+                                    <constraint firstItem="RbC-gF-AMK" firstAttribute="centerY" secondItem="KZN-U7-hnd" secondAttribute="centerY" id="M3c-jZ-RQt"/>
+                                    <constraint firstItem="qAC-e8-5V9" firstAttribute="centerY" secondItem="KZN-U7-hnd" secondAttribute="centerY" id="foF-fx-vgd"/>
+                                    <constraint firstItem="qAC-e8-5V9" firstAttribute="width" secondItem="RbC-gF-AMK" secondAttribute="width" id="ywK-Be-2xq"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha6-3J-XQT">
                                 <rect key="frame" x="0.0" y="620" width="375" height="47"/>

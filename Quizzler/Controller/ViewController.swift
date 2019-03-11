@@ -12,12 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func answerPressed(_ sender: UIButton) {
+    }
+    
 }
 
