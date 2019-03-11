@@ -54,14 +54,46 @@
 		FA417D242236DA1100D46D78 /* Quizzler */ = {
 			isa = PBXGroup;
 			children = (
+				FA417D382236E1ED00D46D78 /* Model */,
+				FA417D392236E1F300D46D78 /* View */,
+				FA417D372236E1E500D46D78 /* Controller */,
+				FA417D3A2236E20700D46D78 /* Supporting Files */,
+			);
+			path = Quizzler;
+			sourceTree = "<group>";
+		};
+		FA417D372236E1E500D46D78 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				FA417D252236DA1100D46D78 /* AppDelegate.swift */,
 				FA417D272236DA1100D46D78 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA417D382236E1ED00D46D78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA417D392236E1F300D46D78 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				FA417D292236DA1100D46D78 /* Main.storyboard */,
 				FA417D2C2236DA1200D46D78 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA417D3A2236E20700D46D78 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				FA417D2E2236DA1200D46D78 /* LaunchScreen.storyboard */,
 				FA417D312236DA1200D46D78 /* Info.plist */,
 			);
-			path = Quizzler;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
