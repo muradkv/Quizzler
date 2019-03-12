@@ -35,8 +35,10 @@ class ViewController: UIViewController {
         }
         
         checkAnswer()
+        
         questionNumber += 1
-        questionLabel.text = allQuestions.list[questionNumber].questionText
+        
+        nextQuestion()
         
     }
     
@@ -47,6 +49,16 @@ class ViewController: UIViewController {
         } else {
             print("You are wrong!")
         }
+        
+    }
+    
+    func nextQuestion() {
+        
+        if questionNumber > 12 {
+            questionNumber = 0
+        }
+        
+        questionLabel.text = allQuestions.list[questionNumber].questionText
         
     }
     
