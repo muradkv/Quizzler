@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        questionLabel.text = allQuestions.list[0].questionText
+        nextQuestion()
     }
 
     @IBAction func answerPressed(_ sender: UIButton) {
