@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     let allQuestions = QuestionBank()
     var pickedAnswer: Bool = true
+    var questionNumber = 0
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
@@ -34,12 +35,14 @@ class ViewController: UIViewController {
         }
         
         checkAnswer()
+        questionNumber += 1
+        questionLabel.text = allQuestions.list[questionNumber].questionText
         
     }
     
     func checkAnswer() {
         
-        if pickedAnswer == allQuestions.list[0].answer {
+        if pickedAnswer == allQuestions.list[questionNumber].answer {
             print("You are right!")
         } else {
             print("You are wrong!")
