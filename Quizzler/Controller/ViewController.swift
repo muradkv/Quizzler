@@ -58,6 +58,7 @@ class ViewController: UIViewController {
         
         if questionNumber <= 12 {
             questionLabel.text = allQuestions.list[questionNumber].questionText
+            updateUI()
         } else {
             let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
             let action = UIAlertAction(title: "Restart", style: .default) { (UIAlertAction) in self.startOver()
@@ -65,10 +66,8 @@ class ViewController: UIViewController {
             
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
-            
         }
-        
-        updateUI()
+
     }
     
     func startOver() {
@@ -79,6 +78,8 @@ class ViewController: UIViewController {
     
     func updateUI() {
         scoreLabel.text = "Score: \(score)"
+        progressLabel.text = "\(questionNumber + 1) / 13"
+        progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNumber + 1)
     }
 }
 
