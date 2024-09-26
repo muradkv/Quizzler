@@ -42,12 +42,18 @@ class ViewController: UIViewController {
     let trueButton = QuizAnswerButton(title: "True")
     let falseButton = QuizAnswerButton(title: "False")
     
+    let quiz = QuestionData().getData()
+    
+    var questionsAnswered = 0
+    
     //MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        setupButtons()
+        updateUI()
     }
     
     //MARK: - Setup UI
@@ -74,7 +80,46 @@ class ViewController: UIViewController {
             trueButton.heightAnchor.constraint(equalToConstant: 80),
             falseButton.heightAnchor.constraint(equalToConstant: 80)
         ])
+        
     }
-
+    
+    private func setupButtons() {
+        trueButton.addAction(UIAction(handler: { [weak self] action in
+            self?.buttonPressed(sender: self?.trueButton)
+        }), for: .touchUpInside)
+        
+        falseButton.addAction(UIAction(handler: { [weak self] action in
+            self?.buttonPressed(sender: self?.falseButton)
+        }), for: .touchUpInside)
+    }
+    
+    //MARK: - Methods
+    
+    private func buttonPressed(sender: UIButton?) {
+        let userAnswer = sender?.currentTitle
+        
+        if userAnswer == quiz[questionsAnswered].answer {
+            sender?.backgroundColor = .green
+        } else {
+            sender?.backgroundColor = .red
+        }
+        
+        if questionsAnswered == quiz.count - 1 {
+            questionsAnswered = 0
+        } else {
+            questionsAnswered += 1
+        }
+        
+        updateUI()
+    }
+    
+    private func updateUI() {
+        questionLabel.text = quiz[questionsAnswered].text
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+            self?.trueButton.backgroundColor = .clear
+            self?.falseButton.backgroundColor = .clear
+        }
+    }
 }
 
