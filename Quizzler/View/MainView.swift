@@ -27,6 +27,13 @@ class MainView: UIView {
         return stackView
     }()
     
+    private let scoreLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        return label
+    }()
+    
     private let questionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +73,8 @@ class MainView: UIView {
         backgroundColor = UIColor(red: 51 / 255, green: 59 / 255, blue: 90 / 255, alpha: 1)
         addSubview(backgroundBubbles)
         addSubview(mainVerticalStackView)
+        
+        mainVerticalStackView.addArrangedSubview(scoreLabel)
         mainVerticalStackView.addArrangedSubview(questionLabel)
         mainVerticalStackView.addArrangedSubview(trueButton)
         mainVerticalStackView.addArrangedSubview(falseButton)
@@ -85,7 +94,8 @@ class MainView: UIView {
             trueButton.heightAnchor.constraint(equalToConstant: 80),
             falseButton.heightAnchor.constraint(equalToConstant: 80),
             
-            progressView.heightAnchor.constraint(equalToConstant: 10)
+            progressView.heightAnchor.constraint(equalToConstant: 10),
+            scoreLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
@@ -95,5 +105,9 @@ class MainView: UIView {
     
     func updateProgressView(progress: Float) {
         progressView.setProgress(progress, animated: true)
+    }
+    
+    func updateScoreLabel(text: Int) {
+        scoreLabel.text = "Score: \(text)"
     }
 }

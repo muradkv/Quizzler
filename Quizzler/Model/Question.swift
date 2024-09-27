@@ -19,6 +19,7 @@ struct Question {
 
 struct QuestionData {
     private var questionsAnswered = 0
+    private var score = 0
     
     private let data = [
         Question(q: "A slug's blood is green.", a: "True"),
@@ -39,11 +40,13 @@ struct QuestionData {
         return data
     }
     
-    func checkAnswer(_ answer: String) -> Bool {
+    mutating func checkAnswer(_ answer: String) -> Bool {
         if answer == data[questionsAnswered].answer {
+            score += 1
             return true
         } else {
-            return false 
+            score -= 1
+            return false
         }
     }
     
@@ -56,9 +59,14 @@ struct QuestionData {
         return progress 
     }
     
+    func getScore() -> Int {
+        return score
+    }
+    
     mutating func nextQuestion() {
         if questionsAnswered == data.count - 1 {
             questionsAnswered = 0
+            score = 0
         } else {
             questionsAnswered += 1
         }

@@ -60,6 +60,9 @@ class ViewController: UIViewController {
         let progressNumber = quizData.getProgress()
         mainView.updateProgressView(progress: progressNumber)
         
+        let scoreNumber = quizData.getScore()
+        mainView.updateScoreLabel(text: scoreNumber)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
             self?.mainView.trueButton.backgroundColor = .clear
             self?.mainView.falseButton.backgroundColor = .clear
