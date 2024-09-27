@@ -18,6 +18,8 @@ struct Question {
 }
 
 struct QuestionData {
+    private var questionsAnswered = 0
+    
     private let data = [
         Question(q: "A slug's blood is green.", a: "True"),
         Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -36,4 +38,30 @@ struct QuestionData {
     func getData() -> [Question] {
         return data
     }
+    
+    func checkAnswer(_ answer: String) -> Bool {
+        if answer == data[questionsAnswered].answer {
+            return true
+        } else {
+            return false 
+        }
+    }
+    
+    func getQuestionText() -> String {
+        return data[questionsAnswered].text
+    }
+    
+    func getProgress() -> Float {
+        let progress = Float(questionsAnswered + 1) / Float(data.count)
+        return progress 
+    }
+    
+    mutating func nextQuestion() {
+        if questionsAnswered == data.count - 1 {
+            questionsAnswered = 0
+        } else {
+            questionsAnswered += 1
+        }
+    }
+    
 }
