@@ -39,6 +39,14 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let progressView: UIProgressView = {
+        let progressView = UIProgressView()
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.tintColor = UIColor(red: 255 / 255, green: 117 / 255, blue: 168 / 255, alpha: 1)
+        progressView.trackTintColor = .white
+        return progressView
+    }()
+    
     let trueButton = QuizAnswerButton(title: "True")
     let falseButton = QuizAnswerButton(title: "False")
     
@@ -65,6 +73,7 @@ class ViewController: UIViewController {
         mainVerticalStackView.addArrangedSubview(questionLabel)
         mainVerticalStackView.addArrangedSubview(trueButton)
         mainVerticalStackView.addArrangedSubview(falseButton)
+        mainVerticalStackView.addArrangedSubview(progressView)
         
         NSLayoutConstraint.activate([
             backgroundBubbles.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -78,7 +87,9 @@ class ViewController: UIViewController {
             mainVerticalStackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             
             trueButton.heightAnchor.constraint(equalToConstant: 80),
-            falseButton.heightAnchor.constraint(equalToConstant: 80)
+            falseButton.heightAnchor.constraint(equalToConstant: 80),
+            
+            progressView.heightAnchor.constraint(equalToConstant: 10)
         ])
         
     }
@@ -115,6 +126,9 @@ class ViewController: UIViewController {
     
     private func updateUI() {
         questionLabel.text = quiz[questionsAnswered].text
+        
+        let progress = Float(questionsAnswered + 1) / Float(quiz.count)
+        progressView.setProgress(progress, animated: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
             self?.trueButton.backgroundColor = .clear
